@@ -1,0 +1,102 @@
+.password-item {
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.bottom-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-pwd-image {
+  height: 200px;
+  width: 200px;
+}
+.no-passwords {
+  color: white;
+  font-family: roboto;
+  font-weight: bold;
+  text-align: center;
+  font-size: 27px;
+}
+.show-passwords-card {
+  border: 1px solid #7683cb;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  padding: 7px;
+  width: 160px;
+  max-height: 70px;
+  justify-content: space-between;
+}
+.initial-details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.initial-container {
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+.initial {
+  color: white;
+  font-size: 15px;
+  font-family: roboto;
+  font-weight: bold;
+}
+.delete-icon {
+  height: 20px;
+  width: 20px;
+}
+.delete {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.renderInputs {
+  color: white;
+  font-size: 10px;
+  font-family: roboto;
+}
+.details-container {
+  margin-left: 6px;
+  margin-top: 7px;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+.purple {
+  background-color: purple;
+}
+.brown {
+  background-color: brown;
+}
+.grey {
+  background-color: gray;
+}
+.goldenrod {
+  background-color: goldenrod;
+}
+.pink {
+  background-color: cyan;
+}
