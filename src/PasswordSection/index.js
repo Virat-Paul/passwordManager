@@ -12,6 +12,12 @@ class PasswordSection extends Component {
     websiteInput: '',
     usernameInput: '',
     passwordInput: '',
+    showPasswords: true,
+    searchInput: '',
+  }
+
+  ShowPasswordsStatus = () => {
+    this.setState(prevState => ({showPasswords: !prevState.showPasswords}))
   }
 
   onDeletePasswordItem = id => {
@@ -50,16 +56,25 @@ class PasswordSection extends Component {
     }))
   }
 
+  filterOnSearch = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
   render() {
     const {
       passwordList,
       websiteInput,
       usernameInput,
       passwordInput,
+      showPasswords,
+      searchInput,
     } = this.state
+    const filterdList = passwordList.filter(eachItem =>
+      eachItem.website.toLowerCase().includes(searchInput),
+    )
 
     const lenOfList = passwordList.length
-    console.log(lenOfList)
+
     return (
       <div className="bg-container">
         <img
@@ -135,7 +150,7 @@ class PasswordSection extends Component {
             <div className="your-pwd-container">
               <h1 className="add-pwd-title">Your Passwords</h1>
               <div className="count-container">
-                <p className="count">1</p>
+                <p className="count">{lenOfList}</p>
               </div>
             </div>
             <div className="input-container">
@@ -146,20 +161,32 @@ class PasswordSection extends Component {
                   className="icon"
                 />
               </div>
-              <input type="text" className="input" placeholder="search" />
+              <input
+                type="search"
+                className="input"
+                placeholder="search"
+                onChange={this.filterOnSearch}
+              />
             </div>
           </div>
           <hr className="line" />
           <div className="show-label-container">
-            <input className="" type="checkbox" />
-            <p className="show-label">Show Passwords</p>
+            <input
+              type="checkbox"
+              id="check"
+              onClick={this.ShowPasswordsStatus}
+            />
+            <label htmlFor="check" className="show-label">
+              Show Passwords
+            </label>
           </div>
-          {passwordList.map(eachItem => (
+          {filterdList.map(eachItem => (
             <PasswordItem
               key={eachItem.id}
               passwordDetails={eachItem}
               lenOfList={lenOfList}
               onDeletePasswordItem={this.onDeletePasswordItem}
+              showPasswords={showPasswords}
             />
           ))}
         </div>

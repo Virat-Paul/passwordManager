@@ -25,6 +25,7 @@
 }
 .show-passwords-card {
   border: 1px solid #7683cb;
+  list-style-type: none;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -99,4 +100,9 @@
 }
 .pink {
   background-color: cyan;
+}
+.masked-pwd {
+  height: 10px;
+  padding: 0;
+  align-self: center;
 }
